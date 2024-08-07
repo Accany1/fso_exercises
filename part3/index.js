@@ -91,7 +91,7 @@ app.post('/api/notes', (request, response,next) => {
 app.put('/api/notes/:id', (request, response) => {
   const {content, important} = request.body
 
-  Note.findByIdAndUpdate(request.params.id, {content, important}, {new: true, runValidators: true, context:{'query'}})
+  Note.findByIdAndUpdate(request.params.id, {content, important}, {new: true, runValidators: true, context:'query'})
   .then(updatedNote => {
     response.json(updatedNote)
   })
